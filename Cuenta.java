@@ -1,34 +1,25 @@
-    package Cuenta;
 
 
-    public class Cuenta {
-        String numeroCuenta;
-        String tipoCuenta;
-        double saldoCuenta; 
-        
-    
-    public Cuenta(String numeroCuenta, String tipoCuenta, double saldoCuenta){
-        this.numeroCuenta = numeroCuenta;
-        this.tipoCuenta = tipoCuenta;
-        this.saldoCuenta = saldoCuenta;
-
-    }  
-
-public class Main {
-public static void main (String[] args ){
-    Cuenta pepePerez = new Cuenta("Sesenta y seis", "Cuenta de Ahorros" , 250000);
-    Cuenta lolaPerez = new Cuenta("Noventa y tres", "Cuenta Corriente", 800000);
-}
-}
-
-
-
-    public double consultarSaldo(){
-
-        System.out.println("Su saldo es "+ saldoCuenta);
+    public class Cuenta{
+       double saldo;
+       String numero;
+       String tipo; 
+       
+       double consultarSaldo(){
+       return saldo;
+       }
+       
+       boolean retirar (double cantidad){
+            if (saldo >= cantidad) {
+            saldo -= cantidad;
+            return true;
+            }
+            else {
+            return false;
+            }
+        }
+       
+       void consignar(double cantidad) {
+       saldo += cantidad;
+       }
     }
-
-    public static void 
-}
-
-    
