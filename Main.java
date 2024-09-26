@@ -1,20 +1,26 @@
+import java.util.ArrayList;
 public class Main {
+public static void main (String [] args){
 
-public static void main (String[] args ){
-    int valor = 100000; 
-    Cuenta cuenta = new Cuenta (); // Creamos el objeto de la clase cuenta 
-    System.out.println(cuenta.consultarSaldo());
 
-    cuenta.consignar(valor);
-    System.out.println(cuenta.consultarSaldo());
-    
-   boolean pudoRetirar = cuenta.retirar(50000.5);
-   System.out.println("Pudo retirar " + pudoRetirar);
-   System.out.println(cuenta.consultarSaldo());
 
-   boolean pudoSegundoRetiro = cuenta.retirar(50000.5);
-   System.out.println("Pudo retirar " + pudoRetirar);
+    Cuenta cuenta1 = new Cuenta("Corriente", "1234-5", 100000);
+    Cuenta cuenta2 = null;
+    Cuenta cuenta3 = cuenta1;
+
+    ArrayList<Cuenta> cuentas = new ArrayList<>();
+    cuentas.add(cuenta1);
+    cuentas.add(cuenta2);
+    cuentas.add(cuenta3);
+
+    System.out.println(cuentas);
+
+    for(int i = 0; i < cuentas.size(); i++){ //inicializa, condición//para que se siga ejecutando 
+        System.out.println("Numero de cuenta: %s, tipo de cuenta: %s), Saldo: %f", cuentas.get(i).getNumero(), cuentas.get(i).getTipo(),cuentas.get(i).getSaldo());
+     
+         }
+
+
 }
-
-
+    
 }
